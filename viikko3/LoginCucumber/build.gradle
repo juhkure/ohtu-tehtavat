@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClass = 'ohtu.App'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.0.0'
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.0.0'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+
+run {
+    standardInput = System.in
+}
